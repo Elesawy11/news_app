@@ -11,6 +11,7 @@ class CategoryForm extends StatelessWidget {
       children: [
         Center(
           child: Container(
+            margin:const EdgeInsets.symmetric(horizontal: 4),
             decoration: BoxDecoration(
               image: const DecorationImage(
                 fit: BoxFit.fill,

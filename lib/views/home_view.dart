@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/category_list_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,8 +24,7 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      body: CategoryForm(),
+      body: const CategoryListView(),
     );
   }
 }
-
