@@ -6,6 +6,7 @@ import '../widgets/sliver_news_list.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class HomeView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocBuilder<NewsCubit, NewsState>(
           builder: (context, state) {
+            
             if (state is NewsLoading) {
               return const Center(
                 child: CircularProgressIndicator(),

@@ -13,12 +13,22 @@ void main(List<String> args) {
   ));
 }
 
-class NewsApp extends StatelessWidget {
+class NewsApp extends StatefulWidget {
   const NewsApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<NewsApp> createState() => _NewsAppState();
+}
+
+class _NewsAppState extends State<NewsApp> {
+  @override
+  void initState() {
+    super.initState();
     BlocProvider.of<NewsCubit>(context).getNews();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeView(),
