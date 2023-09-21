@@ -4,10 +4,13 @@ import 'package:http/http.dart' as http;
 import 'package:news_app/models/artical_model.dart';
 
 class NewsServices {
+
+  String baseUrl = 'https://newsapi.org/v2/top-headlines';
+  String apiKey = 'f34618303a114eb7a83db0a02c3af479';
   Future<List<ArticalModel>> getNews({required String category}) async {
     try {
       Uri url = Uri.parse(
-          'https://newsapi.org/v2/top-headlines?country=us&apiKey=f34618303a114eb7a83db0a02c3af479&category=$category');
+          '$baseUrl?country=us&apiKey=$apiKey&category=$category');
 
       http.Response response = await http.get(url);
 

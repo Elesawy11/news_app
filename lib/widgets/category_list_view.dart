@@ -21,7 +21,7 @@ class CategoryListView extends StatelessWidget {
       image: 'assets/images/health.avif',
     ),
     CategoryModel(
-      categoryName: 'Sxience',
+      categoryName: 'Science',
       image: 'assets/images/science.avif',
     ),
     CategoryModel(

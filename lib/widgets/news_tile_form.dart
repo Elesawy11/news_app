@@ -6,9 +6,13 @@ class NewsTileForm extends StatelessWidget {
   const NewsTileForm({
     super.key,
     required this.articalModel,
+    this.titleOverflow = TextOverflow.ellipsis,
+    this.subTitleOverflow = TextOverflow.ellipsis,
   });
 
   final ArticalModel articalModel;
+  final TextOverflow? titleOverflow;
+  final TextOverflow? subTitleOverflow;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +40,11 @@ class NewsTileForm extends StatelessWidget {
             Text(
               articalModel.title,
               maxLines: 2,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                overflow: TextOverflow.ellipsis,
+                overflow: titleOverflow,
               ),
             ),
             const SizedBox(
@@ -49,10 +53,10 @@ class NewsTileForm extends StatelessWidget {
             Text(
               articalModel.description ?? '',
               maxLines: 2,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14,
-                overflow: TextOverflow.ellipsis,
+                overflow: subTitleOverflow,
               ),
             ),
           ],

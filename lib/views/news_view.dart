@@ -14,7 +14,11 @@ class NewsView extends StatelessWidget {
           horizontal: 16,
           vertical: 50,
         ),
-        child: NewsTileForm(articalModel: articalModel),
+        child: NewsTileForm(
+          articalModel: articalModel,
+          titleOverflow: TextOverflow.visible,
+          subTitleOverflow: TextOverflow.visible,
+        ),
       ),
     );
   }
