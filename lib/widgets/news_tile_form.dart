@@ -20,11 +20,15 @@ class NewsTileForm extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child:articalModel.image !=null? Image.network(
-                articalModel.image!,
-                fit: BoxFit.fill,
-                height: 200,
-              ):const Center(child: Text(''),),
+              child: articalModel.image != null
+                  ? Image.network(
+                      articalModel.image!,
+                      fit: BoxFit.fill,
+                      height: 200,
+                    )
+                  : const Center(
+                      child: Text(''),
+                    ),
             ),
             const SizedBox(
               height: 8,
@@ -43,7 +47,7 @@ class NewsTileForm extends StatelessWidget {
               height: 8,
             ),
             Text(
-              articalModel.description??'',
+              articalModel.description ?? '',
               maxLines: 2,
               style: const TextStyle(
                 color: Colors.grey,

@@ -10,33 +10,27 @@ class CategoryForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Center(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 4),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(categoryModel.image),
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            height: 120,
-            width: 200,
-            child: Center(
-              child: Text(
-                categoryModel.categoryName,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: AssetImage(categoryModel.image),
+        ),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      height: 120,
+      width: 200,
+      child: Center(
+        child: Text(
+          categoryModel.categoryName,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }
