@@ -19,7 +19,6 @@ class NewsServices {
       ArticalModel articalModel = ArticalModel.fromJson(artical);
       articalList.add(articalModel);
     }
-    print(data);
     return articalList;
   } else {
     var data = jsonDecode(response.body);

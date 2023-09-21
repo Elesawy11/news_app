@@ -20,7 +20,6 @@ class CategoryForm extends StatelessWidget {
                 fit: BoxFit.fill,
                 image: AssetImage(categoryModel.image),
               ),
-              color: Colors.orange,
               borderRadius: BorderRadius.circular(12),
             ),
             height: 120,

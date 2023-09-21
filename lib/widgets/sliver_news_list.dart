@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/artical_model.dart';
 
 import 'news_tile.dart';
 
 class NewsSliverList extends StatelessWidget {
   const NewsSliverList({
     super.key,
+    required this.articals,
   });
+  final List<ArticalModel> articals;
 
   @override
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return const NewsTile();
+          return NewsTile(
+            articalModel: articals[index],
+          );
         },
-        childCount: 5,
+        childCount: articals.length,
       ),
     );
   }
