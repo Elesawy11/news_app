@@ -8,11 +8,11 @@ part 'news_state.dart';
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsInitial());
 
-  getNews() async {
+ void getNews() async {
     emit(NewsLoading());
 
     try {
-      List<ArticalModel> articals = await NewsServices().getNews();
+      List<ArticalModel> articals = await NewsServices().getNews(category: 'general');
       emit(NewsSuccess(articalList: articals));
     } on Exception catch (e) {
       emit(NewsFailure(e.toString()));

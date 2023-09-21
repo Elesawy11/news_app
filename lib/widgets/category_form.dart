@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/cubits/category_cubit/category_cubit.dart';
 import 'package:news_app/models/category_model.dart';
+import 'package:news_app/views/category_news_view.dart';
 
 class CategoryForm extends StatelessWidget {
   const CategoryForm({
@@ -10,24 +13,33 @@ class CategoryForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.fill,
-          image: AssetImage(categoryModel.image),
+    return GestureDetector(
+      onTap: () {
+        BlocProvider.of<CategoryCubit>(context)
+            .getCategoryNews(category: categoryModel.categoryName);
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const CategoryNewsView();
+        }));
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 4),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage(categoryModel.image),
+          ),
+          borderRadius: BorderRadius.circular(12),
         ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      height: 120,
-      width: 200,
-      child: Center(
-        child: Text(
-          categoryModel.categoryName,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+        height: 120,
+        width: 200,
+        child: Center(
+          child: Text(
+            categoryModel.categoryName,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
         ),
       ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/cubits/cubit/news_cubit.dart';
+import 'package:news_app/cubits/category_cubit/category_cubit.dart';
 import 'package:news_app/simple_bloc_observer.dart';
 
+import 'cubits/news_cubit/news_cubit.dart';
 import 'views/home_view.dart';
 
 void main(List<String> args) {
@@ -29,9 +30,12 @@ class _NewsAppState extends State<NewsApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeView(),
+    return  BlocProvider(
+      create: (context) => CategoryCubit(),
+      child:const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeView(),
+      ),
     );
   }
 }
