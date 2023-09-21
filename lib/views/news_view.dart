@@ -9,7 +9,13 @@ class NewsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NewsTileForm(articalModel: articalModel),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 50,
+        ),
+        child: NewsTileForm(articalModel: articalModel),
+      ),
     );
   }
 }

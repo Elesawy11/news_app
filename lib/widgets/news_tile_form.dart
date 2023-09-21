@@ -17,7 +17,6 @@ class NewsTileForm extends StatelessWidget {
       child: SizedBox(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
